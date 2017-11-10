@@ -1,0 +1,7 @@
+extends header
+block content
+
+	form.centerBox(action='/login' method='post' name='loginForm')
+		input(type='text' name='email' placeholder='EMAIL' class='loginFormInput')
+		input(type='password' name='password' placeholder='PASSWORD' class='loginFormInput')
+		button(type='submit' class='formButton') sign in

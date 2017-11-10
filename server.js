@@ -3,6 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var passport = require("passport");
 
 var config = require("./config.js");
 var routes = require("./routes.js");
@@ -11,7 +12,7 @@ var app = express();
 
 function start() {
 	app.set('port', (process.env.PORT || 80));
-	app.use(express.static(__dirname + "/../public"));
+	app.use(express.static(__dirname + "/public"));
 	app.use(bodyParser.json());
 
 	app.set('views', __dirname + '/views');
@@ -39,6 +40,8 @@ function start() {
 			console.log('Mongo Connection Successful');
 		}
 	});
+
+	require('./lib/passport.js')(passport);
 
 	app.listen(app.get('port'), function() {
 		console.log('Server running on localhost:' + app.get('port'));

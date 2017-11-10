@@ -4,13 +4,14 @@
 	"author": "Ben Craig",
 	"main": "main.js",
 	"scripts": {
-		"sass": "sass ./public/stylesheets/style.sass ./public/stylesheets.style.css",
+		"sass": "sass ./public/stylesheets/style.sass ./public/stylesheets/style.css",
 		"start": "node main.js"
 	},
 	"dependencies": {
 		"bcrypt-nodejs": "~0.0.3",
 		"bluebird": "^3.5.0",
 		"body-parser": "^1.15.2",
+		"connect-mongo": "^1.3.2",
 		"express": "^4.14.0",
 		"express-session": "~1.12.1",
 		"mongoose": "^4.7.5",
