@@ -1,0 +1,23 @@
+{
+	"name": "boilerplate-auth",
+	"version": "0.0.1",
+	"author": "Ben Craig",
+	"main": "main.js",
+	"scripts": {
+		"sass": "sass ./public/stylesheets/style.sass ./public/stylesheets.style.css",
+		"start": "node main.js"
+	},
+	"dependencies": {
+		"bcrypt-nodejs": "~0.0.3",
+		"bluebird": "^3.5.0",
+		"body-parser": "^1.15.2",
+		"express": "^4.14.0",
+		"express-session": "~1.12.1",
+		"mongoose": "^4.7.5",
+		"morgan": "^1.8.2",
+		"passport": "~0.1.17",
+		"passport-local": "~0.1.6",
+		"pug": "^2.0.0-beta.12"	
+	},
+	"devDependencies": {}
+}
