@@ -1,3 +1,12 @@
-Boilerplate code base for projects that need user authentication and sessions
+Boilerplate code base for projects that need user authentication and sessions.
 
-Hours spent making this so far: 4
+Contents
+=====
+- Login/Logout ability
+- Signup page, open to public
+- Plain homepage
+
+Requirements
+=====
+- config.js file with mongoBD connection string
+- Adjust stylings to match preference

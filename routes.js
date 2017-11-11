@@ -27,9 +27,9 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res, next) {
 	if (req.user) {
-		res.render('login');
+		res.render('index');
 	} else {
-		res.render('index');		
+		res.render('login');		
 	}
 });
 
@@ -55,8 +55,26 @@ router.get('/logout', function(req, res, next) {
 	res.redirect('/');
 });
 
+router.get('/signup', function(req, res, next) {
+	res.render('signup');
+});
+
+router.post('/signup', function(req, res, next) {
+	passport.authenticate('local-signup', function(err, user, info) {
+		if (!user) {
+			res.status(409).json({
+				err: "User already exists"
+			});
+		} else {
+			req.logIn(user, function(err) {
+				res.redirect('/');
+			});
+		}
+	})(req, res, next);
+});
+
 router.get('/404', function(req, res, next) {
-	res.render('index');
+	res.render('404');
 });
 
 router.get('*', function(req, res, next) {
