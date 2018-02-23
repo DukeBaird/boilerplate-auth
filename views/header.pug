@@ -4,6 +4,13 @@ html
 		//- Stylesheets
 		link(rel='stylesheet' href='/stylesheets/style.css')
 
+		//- Scripts
+		script(type='text/javascript' src='/js/angular.min.js')
+
+
+		script(type='text/javascript').
+			user = #{user}
+			console.log(user);
 
 	body
 		block content

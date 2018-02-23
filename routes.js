@@ -27,7 +27,9 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res, next) {
 	if (req.user) {
-		res.render('index');
+		res.render('index', {
+			user: req.user
+		});
 	} else {
 		res.render('login');		
 	}
