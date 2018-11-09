@@ -1,11 +1,12 @@
 var express = require("express");
 var passport = require("passport");
 var session = require("express-session");
-
 var router = express.Router();
 
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
+
+var adminFunctions = require('../lib/adminFunctions.js');
 
 router.use(session({
 	secret: 'nothingiswrongwithpinappleonpizza',
@@ -25,10 +26,11 @@ router.use(function(req, res, next) {
 	next();
 });
 
-router.get('/', function(req, res, next) {
+router.get('/', adminFunctions.isLoggedIn(['user', 'admin']), function(req, res, next) {
 	if (req.user) {
 		res.render('index', {
-			user: req.user
+			user: req.user,
+			token: req.token
 		});
 	} else {
 		res.render('login');		

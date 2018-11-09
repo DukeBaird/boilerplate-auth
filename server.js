@@ -6,7 +6,8 @@ var mongoose = require('mongoose');
 var passport = require("passport");
 
 var config = require("./config.js");
-var routes = require("./routes.js");
+var routes = require("./routes/routes.js");
+var api = require('./routes/api');
 
 var app = express();
 
@@ -28,8 +29,8 @@ function start() {
 		next();
 	});
 
-	// app.use('/api/v1', api.router);
 	app.use('/', routes);
+	app.use('/api/v1', api.router);
 
 	mongoose.connect((process.env.MONGOSTRING || config.mongoString), {
 		useMongoClient: true

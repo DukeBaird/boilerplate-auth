@@ -8,9 +8,13 @@ html
 		script(type='text/javascript' src='/js/angular.min.js')
 
 
-		script(type='text/javascript').
-			user = #{user}
-			console.log(user);
+		
 
 	body
+		if token
+			script(type='text/javascript').
+				token = '!{token}';
+				user = #{user};
+				console.log(user, token);
+
 		block content
