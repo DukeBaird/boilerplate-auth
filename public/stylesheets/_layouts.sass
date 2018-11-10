@@ -1,9 +1,37 @@
-// Floating center of the page box
-.centerBox
-	position: fixed
-	top: calc(50% - 300px)
-	left: calc(50% - 300px)
-	height: 600px
-	width: 600px
-	background-color: $white
-	border-radius: 25px
+body
+	margin: 0
+
+$topBarHeight: 50px
+
+.fullScreenFlex
+	display: flex
+	height: calc(100% - $topBarHeight)
+	width: 100%
+
+	&.loginPage
+		align-items: center
+		justify-content: center
+
+		.centerBox
+			flex-direction: column
+			align-items: center
+
+	.centerBox
+		display: flex
+		justify-content: center
+		height: 600px
+		width: 600px
+		background-color: $white
+		// border-radius: 25px
+
+	.wideBox
+		display: flex
+		justify-content: space-around
+		height: 600px
+		width: 100%
+		background-color: orange
+
+		.formContainer
+			display: flex
+			flex-direction: column
+			justify-content: center

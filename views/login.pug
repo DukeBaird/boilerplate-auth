@@ -1,7 +1,11 @@
 extends header
 block content
 
-	form.centerBox(action='/login' method='post' name='loginForm')
-		input(type='text' name='email' placeholder='EMAIL' class='centerFormInput')
-		input(type='password' name='password' placeholder='PASSWORD' class='centerFormInput')
-		button(type='submit' class='formButton') sign in
+	.fullScreenFlex.loginPage
+		form.centerBox(action='/login' method='post' name='loginForm')
+			input(type='text' name='email' placeholder='EMAIL' class='centerFormInput')
+			input(type='password' name='password' placeholder='PASSWORD' class='centerFormInput')
+			button(type='submit' class='formButton') sign in
+
+			br
+			a(href='/signup') Need an account?

@@ -1,0 +1,17 @@
+extends header
+block content
+
+	include partials/topBar
+	.fullScreenFlex
+		.wideBox
+			.formContainer
+				input(type='text' name='email' placeholder='EMAIL' class='centerFormInput')
+				input(type='password' name='password' placeholder='PASSWORD' class='centerFormInput')
+				button(type='submit' class='formButton') reset password
+
+			//- This won't work until headers are set, which can only be done with JS. 
+			form.formContainer(action='/api/v1/users/adminCreation' method='post' name='adminAccountCreation')
+				input(type='text' name='email' placeholder='EMAIL' class='centerFormInput')
+				input(type='password' name='password' placeholder='PASSWORD' class='centerFormInput')
+				button(type='submit' class='formButton') Create Account
+

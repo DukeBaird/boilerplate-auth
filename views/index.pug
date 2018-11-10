@@ -1,6 +1,8 @@
 extends header
 block content
 
-	include sideBar
-	| Stuff goes here
-	| Hello {{ name }}
+	include partials/topBar
+
+	.fullScreenFlex
+		| Stuff goes here
+		| Hello {{ name }}

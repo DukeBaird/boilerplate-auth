@@ -77,6 +77,13 @@ router.post('/signup', function(req, res, next) {
 	})(req, res, next);
 });
 
+router.get('/users', adminFunctions.isLoggedIn(['admin']), function(req, res, next) {
+	res.render('manageUsers', {
+		user: req.user,
+		token: req.token
+	});
+});
+
 router.get('/404', function(req, res, next) {
 	res.render('404');
 });

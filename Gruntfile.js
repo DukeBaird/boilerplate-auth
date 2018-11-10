@@ -7,20 +7,20 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		pug: {
-			compile: {
-				options: {
-					pretty: true
-				},
-				files:[{
-					cwd: 'templates',
-					src: '**/*.pug',
-					dest: 'public/views',
-					expand: true,
-					ext: '.html'
-				}]
-			}
-		},
+		// pug: {
+		// 	compile: {
+		// 		options: {
+		// 			pretty: true
+		// 		},
+		// 		files:[{
+		// 			cwd: 'templates',
+		// 			src: '**/*.pug',
+		// 			dest: 'public/views',
+		// 			expand: true,
+		// 			ext: '.html'
+		// 		}]
+		// 	}
+		// },
 
 		postcss: {
 			options: {
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 				files: ['Gruntfile.js']
 			},
 			css: {
-				files: 'public/css/**/*.sass',
+				files: 'public/stylesheets/*.sass',
 				tasks: ['sass']
 			},
 			// pug: {
@@ -68,6 +68,6 @@ module.exports = function(grunt) {
 		grunt.log.writeln('**********************************************************************'['rainbow']);
 		grunt.log.writeln('**********************************************************************'['rainbow']);
 	});
-	grunt.registerTask('compile', 'Convert pug templates into html templates', ['pug','sass','postcss:dist', 'watch']);
+	grunt.registerTask('compile', 'Convert pug templates into html templates', ['sass','postcss:dist', 'watch']);
 	grunt.registerTask('autoPrefix', "Prefix css", ['postcss:dist']);
 };

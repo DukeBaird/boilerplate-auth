@@ -15,6 +15,4 @@ Requirements
 TODO
 =====
 - admin-blocked account creation
-- proper page for swapping between login/signup
-- better landing page with logout option
-- add babel to `grunt compile`
+- add babel to `grunt compile`, fix sass in grunt
